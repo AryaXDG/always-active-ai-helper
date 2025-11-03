@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Helper Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+  <h2>AI Helper Settings</h2>
+
+  <div class="main-content">
+  
+    <div class="settings-column">
+      <h3>Configuration</h3>
+      <div>
+        <label for="api-key">Gemini API Key:</label>
+        <input type="password" id="api-key" placeholder="Enter your API key here">
+      </div>
+
+      <h3>Window Style</h3>
+      
+      <div class="setting-row">
+        <label for="bg-color">Background Color:</label>
+        <input type="color" id="bg-color">
+      </div>
+      
+      <div class="setting-row">
+        <label for="text-color">Text Color:</label>
+        <input type="color" id="text-color">
+      </div>
+      
+      <div>
+        <label for="transparency" id="transparency-label">Transparency (0.95):</label>
+        <input type="range" id="transparency" min="0.1" max="1.0" step="0.05">
+      </div>
+
+      <h3>Window Size</h3>
+      
+      <div>
+        <label for="window-width" id="width-label">Default Width (300px):</label>
+        <input type="range" id="window-width" min="200" max="800" step="10">
+      </div>
+      
+      <div>
+        <label for="window-height" id="height-label">Default Height (200px):</label>
+        <input type="range" id="window-height" min="100" max="600" step="10">
+      </div>
+
+      <button id="save">Save</button>
+      <span id="status"></span>
+    </div>
+
+    <div class="preview-column">
+      <h3>Live Preview</h3>
+      <div id="preview-wrapper">
+        <div id="preview-window">
+          <div id="preview-close">X</div>
+          <div id="preview-content">
+            Thinking...
+            <br><br>
+            Your AI response will appear here. You can change the window's color, size, and transparency.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <script src="options.js"></script>
+</body>
+</html>
