@@ -1,0 +1,156 @@
+/* --- 1. General Page Layout --- */
+body { 
+  font-family: sans-serif; 
+  margin: 0; 
+  padding: 20px;
+  background-color: #f0f0f0; 
+  /* Set a min-width so the page doesn't look too cramped */
+  min-width: 650px; 
+}
+
+/* This is the new flex container for the columns */
+.main-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+h2 {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-top: 0; /* Clean up margin */
+}
+
+.settings-column {
+  width: 350px;
+}
+
+.preview-column {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 2. Form Controls --- */
+div { margin-bottom: 15px; }
+
+h3 {
+  margin-bottom: 10px;
+}
+
+label { 
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: bold; 
+}
+
+input[type="text"], 
+input[type="password"],
+input[type="range"] { 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+input[type="range"] {
+  margin-top: 5px;
+}
+
+input[type="color"] { 
+  height: 30px; 
+  width: 50px;
+  padding: 0; 
+  border: 1px solid #ccc;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.setting-row label {
+  margin-bottom: 0;
+}
+
+button { 
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 15px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+button:hover { background-color: #45a049; }
+
+#status { 
+  margin-left: 10px; 
+  color: green; 
+  font-weight: bold;
+}
+
+
+/* --- 3. Preview Window Styles --- */
+/* (Based on content.css for an accurate preview) */
+
+#preview-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+  border: 1px dashed #aaa;
+  border-radius: 5px;
+  padding: 20px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+/* This is the main preview element */
+#preview-window {
+  /* These styles are copied from .ai-helper-window */
+  min-width: 200px;
+  min-height: 100px;
+  z-index: 99999;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* Preview-specific overrides */
+  position: relative; /* Not fixed */
+  resize: none;     /* Disable resizing in preview */
+  cursor: default;  /* No move cursor */
+}
+
+/* Copied from .ai-helper-close */
+#preview-close {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 10000;
+  cursor: default;
+  background: #ff555599;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 14px;
+  height: 14px;
+  font-size: 8px;
+  line-height: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Copied from .ai-helper-content */
+#preview-content {
+  padding: 8px;
+  padding-top: 20px;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+  overflow-y: auto;
+  word-wrap: break-word;
+  cursor: default;
+}
