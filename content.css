@@ -1,0 +1,68 @@
+.ai-helper-window {
+  position: fixed;
+  
+  /* --- KEY CHANGE: POSITION --- */
+  bottom: 20px;
+  right: 20px;
+  
+  /* --- KEY CHANGE: SIZE REMOVED --- */
+  /* width: 300px;  (REMOVED) */
+  /* height: 200px; (REMOVED) */
+  
+  /* Min sizes are kept, which is good practice */
+  min-width: 200px;
+  min-height: 100px;
+  z-index: 99999;
+  
+  /* --- Frame styles removed --- */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  
+  resize: both; /* This allows manual user resizing */
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  
+  cursor: move;
+}
+
+
+/* --- Re-styled close button --- */
+.ai-helper-close {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 10000; /* Ensure it's above the content */
+  
+  cursor: pointer;
+  background: #ff555599; /* Made it semi-transparent */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 14px;
+  height: 14px;
+  font-size: 8px;
+  line-height: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+.ai-helper-close:hover {
+  background: #ff7b72; /* Solid on hover */
+}
+
+.ai-helper-content {
+  padding: 8px;
+  /* Add padding to top to avoid the close button */
+  padding-top: 20px; 
+  
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+  overflow-y: auto; /* Allow scrolling */
+  word-wrap: break-word;
+  
+  cursor: text; 
+}z
