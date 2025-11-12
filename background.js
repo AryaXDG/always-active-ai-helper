@@ -8,7 +8,7 @@
  * @returns {Promise<void>}
  */
 async function streamGemmaResponse(question, context, apiKey, onChunk) {
-  const modelName = 'gemini-2.0-flash-exp';
+  const modelName = 'gemini-2.5-flash';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:streamGenerateContent?alt=sse&key=${apiKey}`;
 
   // Construct the prompt with context and question
@@ -31,7 +31,7 @@ ${context.substring(0, 8000)}`;
     },
     systemInstruction: {
       parts: [{
-        text: "You are a helpful AI assistant. Answer questions concisely based on the provided context. If the answer isn't in the context, say so briefly."
+        text: "You are a helpful AI assistant for solving questions. Answer questions concisely based on the provided context, only provide the answer, no explanation is needed! If the answer isn't in the context, then tell the most likely answer"
       }]
     }
   };
