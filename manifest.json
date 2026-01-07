@@ -1,34 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Always Active AI Helper",
-  "version": "1.0",
-  "description": "Fools page visibility and provides an AI helper for highlighted text.",
-  "permissions": [
-    "storage",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://generativelanguage.googleapis.com/*"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["content.css"]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["visibility-override.js"],
-      "matches": ["<all_urls>"]
-    }
-  ],
+  "name": "Always Active AI Helper (Second Brain)",
+  "version": "3.0",
+  "permissions": ["storage", "scripting", "contextMenus"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["content.css"]
+  }],
+  "web_accessible_resources": [{
+    "resources": ["visibility-override.js"],
+    "matches": ["<all_urls>"]
+  }],
   "options_page": "options.html",
-  "action": {
-    "default_popup": "popup.html",
-    "default_title": "AI Helper Settings"
-  }
+  "action": { "default_popup": "popup.html" }
 }
