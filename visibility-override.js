@@ -1,25 +1,15 @@
-/*
-  This script overrides the document's visibility properties
-  to make the page believe it is always active.
-*/
 try {
-  Object.defineProperty(document, 'visibilityState', {
-    value: 'visible',
-    writable: false,
-    configurable: false
-  });
 
-  Object.defineProperty(document, 'hidden', {
-    value: false,
-    writable: false,
-    configurable: false
-  });
-
-  // Prevent the 'visibilitychange' event from firing
+  Object.defineProperty(document, 'visibilityState', { value: 'visible', writable: false });
+  Object.defineProperty(document, 'hidden', { value: false, writable: false });
   document.addEventListener('visibilitychange', e => e.stopImmediatePropagation(), true);
 
-  console.log('Page Visibility API overridden by extension.');
+  Object.defineProperty(document, 'hasFocus', { value: () => true, writable: false });
+  
+  window.addEventListener('blur', e => e.stopImmediatePropagation(), true);
+  document.addEventListener('blur', e => e.stopImmediatePropagation(), true);
 
+  console.log('Advanced Visibility & Focus Overridden.');
 } catch (e) {
-  console.error('Failed to override Page Visibility API:', e);
+  console.error('Override failed:', e);
 }
