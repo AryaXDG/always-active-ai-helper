@@ -46,7 +46,7 @@
         <input type="range" id="window-height" min="100" max="600" step="10">
       </div>
 
-      <button id="save">Save</button>
+      <button id="save">Save Settings</button>
       <span id="status"></span>
     </div>
 
@@ -64,6 +64,18 @@
       </div>
     </div>
 
-  </div> <script src="options.js"></script>
+  </div>
+
+  <div class="memory-section">
+    <div class="memory-header">
+      <h3>🧠 Second Brain Memory</h3>
+      <button id="refresh-memories" class="secondary-btn">Refresh List</button>
+    </div>
+    <div id="memory-list-container">
+      <p style="color: #666; font-style: italic;">Loading memories...</p>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
 </body>
 </html>
